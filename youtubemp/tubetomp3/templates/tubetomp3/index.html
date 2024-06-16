@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "tubetomp3/style.css" %}">
+    <script src="https://kit.fontawesome.com/552e1619ab.js" crossorigin="anonymous"></script>
+    <title>YoutubeToMP</title>
+</head>
+<body>
+    <nav>
+        <a href="https://fl0wwy.github.io/Portfolio/"><i class="fa-solid fa-earth-europe"></i></a>
+        <a href="https://github.com/fl0wwy"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:barbenwaiss@outlook.com"><i class="fa-regular fa-envelope"></i></a>
+    </nav>
+    <header>
+        <h1 id='title'>YouTubeToMP</h1>
+        <h3>A free platform for downloading Youtube videos</h3>
+    </header> 
+    <div id='form'>
+        <form id='myForm'>
+            {% csrf_token %}
+            <div id="sub">
+                <input type="text" name='url' placeholder="Paste Youtube video URL here...">
+                <label for="mp3">MP3</label>
+                <input type="radio" id='mp3' value='mp3' name='type' checked>
+                <label for="mp4">MP4</label>
+                <input type="radio" id='mp4' value='mp4' name='type'>
+            </div>
+            <input type="submit" value="Convert" id='submit'>
+        </form>
+    </div>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+    <script src="{% static "tubetomp3/script.js" %}"></script>
+</body>
+</html>
